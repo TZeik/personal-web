@@ -6,11 +6,15 @@ export interface Experience {
   information: string[];
 }
 
-export interface Skill {
-    name: string;
-    imageUrl: string;
+export interface SkillCategory {
+  name: string;
+  skills: Skill[];
 }
 
+export interface Skill {
+  name: string;
+  imageUrl: string;
+}
 export interface Work {
-    
+  
 }

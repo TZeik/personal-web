@@ -10,8 +10,8 @@ const Home: React.FC = () => {
     <div className={Styles.container}>
       <Header />
       <div className={Styles.main}>
-        <Skills />
         <WorkExperience />
+        <Skills />
       </div>
       <Footer />
     </div>

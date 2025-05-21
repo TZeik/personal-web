@@ -61,7 +61,92 @@
 /* Skills Styles*/
 
 .skills {
+  padding: 4rem 2rem;
+  background-color: white;
+  color: darkblue;
+}
+
+.sectionTitle {
+  text-align: center;
   margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: darkblue;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: darkblue;
+  margin: 0.5rem auto;
+}
+
+.skillsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skillCategory {
+  margin-bottom: 2.5rem;
+}
+
+.categoryTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid darkblue;
+  color: darkblue;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+
+.skillItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 139, 0.05);
+}
+
+.skillItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 139, 0.1);
+  background-color: rgba(0, 0, 139, 0.1);
+}
+
+.skillIcon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.skillName {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  color: darkblue;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+
+  .skillIcon {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /* Work Experience Styles */
