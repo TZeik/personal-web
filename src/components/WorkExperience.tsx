@@ -1,5 +1,5 @@
 import React from "react";
-import Styles from "../styles/global.module.css";
+import Styles from "../styles/work-experience.module.css";
 import { Experience } from "../types/types";
 
 
@@ -7,7 +7,18 @@ import { Experience } from "../types/types";
 const WorkExperience: React.FC = () => {
   const experiences: Experience[] = [
     {
-      workplace: "Example Workplace",
+      workplace: "Example Workplace #1",
+      position: "Example Position",
+      startDate: "Enero",
+      endDate: "Present",
+      information: [
+        "Example Info 1",
+        "Example Info 2",
+        "Example Info 3"
+      ]
+    },
+    {
+      workplace: "Example Workplace #2",
       position: "Example Position",
       startDate: "Enero",
       endDate: "Present",

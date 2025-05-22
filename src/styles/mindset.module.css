@@ -1,0 +1,53 @@
+/* Mindset Component Styles */
+.mindsetContainer {
+  padding: 2rem;
+  background-color: white;
+  color: darkblue;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 139, 0.1);
+  margin: 2rem 0;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.profileSection {
+  flex: 0 0 auto;
+}
+
+.profileImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid darkblue;
+}
+
+.textSection {
+  flex: 1;
+}
+
+.description {
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.description p {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .contentWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profileImage {
+    width: 150px;
+    height: 150px;
+  }
+}

@@ -15,6 +15,12 @@ export interface Skill {
   name: string;
   imageUrl: string;
 }
-export interface Work {
-  
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  imageUrl: string;
+  projectUrl: string;
+  features: string[];
 }

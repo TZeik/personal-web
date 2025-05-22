@@ -1,0 +1,163 @@
+.portfolioSection {
+  padding: 4rem 2rem;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: darkblue;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: darkblue;
+  margin: 0.5rem auto;
+}
+
+.projectsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projectCard {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: 500px;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+}
+
+.projectBackground {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.projectBackground::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+.projectContent {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  color: white;
+  z-index: 1;
+}
+
+.projectInfoTop {
+  margin-bottom: 1rem;
+}
+
+.projectTitle {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.projectDescription {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.projectFeatures {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.projectFeatures li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.projectFeatures li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #3498db;
+  font-size: 1.2rem;
+}
+
+.projectButton {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin: 1.5rem auto;
+  transition: all 0.3s ease;
+  border: 2px solid #3498db;
+}
+
+.projectButton:hover {
+  background-color: transparent;
+  color: #3498db;
+}
+
+.projectInfoBottom {
+  margin-top: 1rem;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.techBadge {
+  background-color: rgba(52, 152, 219, 0.2);
+  color: #3498db;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .portfolioSection {
+    padding: 2rem 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .projectsContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .projectCard {
+    height: auto;
+    min-height: 400px;
+  }
+}

@@ -1,0 +1,58 @@
+/* Work Experience Styles */
+.workExperience {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.experienceItem {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.experienceHeader {
+  margin-bottom: 1rem;
+}
+
+.workplace {
+  font-size: 1.5rem;
+  color: #2980b9;
+  margin-bottom: 0.3rem;
+}
+
+.position {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.dates {
+  display: block;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.informationList {
+  padding-left: 1.5rem;
+}
+
+.informationItem {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}

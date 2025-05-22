@@ -1,5 +1,5 @@
 import React from "react";
-import Styles from "../styles/global.module.css";
+import Styles from "../styles/skills.module.css";
 import { SkillCategory } from "../types/types";
 
 const Skills: React.FC = () => {
