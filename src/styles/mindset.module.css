@@ -1,8 +1,8 @@
 /* Mindset Component Styles */
 .mindsetContainer {
   padding: 2rem;
-  background-color: white;
-  color: darkblue;
+  background-color: var(--white);
+  color: var(--primary);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 139, 0.1);
   margin: 2rem 0;
@@ -24,7 +24,7 @@
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid darkblue;
+  border: 3px solid var(--primary);
 }
 
 .textSection {

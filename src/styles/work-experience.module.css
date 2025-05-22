@@ -6,7 +6,7 @@
 .sectionTitle {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #2c3e50;
+  color: var(--tertiary);
   border-bottom: 2px solid #eee;
   padding-bottom: 0.5rem;
 }
@@ -18,7 +18,7 @@
 }
 
 .experienceItem {
-  background: #f9f9f9;
+  background: var(--white);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -28,9 +28,26 @@
   margin-bottom: 1rem;
 }
 
+.workplaceContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5px;
+  gap: 15px;
+}
+
+.workplaceContainer img {
+  margin-top: 15px;
+}
+
+.workIcon {
+  width: 40px;
+  height: 40px;
+}
+
 .workplace {
   font-size: 1.5rem;
-  color: #2980b9;
+  color: var(--primary);
   margin-bottom: 0.3rem;
 }
 
@@ -38,14 +55,14 @@
   display: block;
   font-size: 1.1rem;
   font-weight: 500;
-  color: #555;
+  color: var(--dark-gray);
   margin-bottom: 0.3rem;
 }
 
 .dates {
   display: block;
   font-size: 0.9rem;
-  color: #7f8c8d;
+  color: var(--light-gray);
 }
 
 .informationList {

@@ -5,7 +5,7 @@
 }
 
 .headerContent {
-  background-color: #d5e6ff;
+  background-color: var(--secondary);
   margin: 0 auto;
   padding: 10px 0;
 }
@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #123b63;
+  background-color: var(--primary);
   margin: 0 auto;
   padding: 15px 0;
 }
@@ -27,24 +27,24 @@
 .name {
   font-size: 4.5rem;
   margin-bottom: 0.5rem;
-  color: #2c3e50;
+  color: var(--primary);
 }
 
 .title {
   font-size: 3.5rem;
   font-weight: 600;
-  color: #2e2e2e;
+  color: var(--black);
   margin-bottom: 1.5rem;
 }
 
 .descriptionTitle {
   font-size: 2.5rem;
   line-height: 1.6;
-  color: #f2f2f2;
+  color: var(--white);
 }
 
 .description {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #f2f2f2;
+  color: var(--white);
 }
