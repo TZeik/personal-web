@@ -10,7 +10,7 @@ const Portfolio: React.FC = () => {
       title: "E-commerce Platform",
       description: "A full-featured online store with payment integration",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      imageUrl: "/project-sample-1.jpg",
+      imageUrl: "/sample01.jpg",
       projectUrl: "https://example.com",
       features: [
         "Product catalog with filters",
@@ -24,7 +24,7 @@ const Portfolio: React.FC = () => {
       title: "Task Management App",
       description: "Collaborative tool for team task organization",
       technologies: ["React", "Firebase", "Material UI"],
-      imageUrl: "/project-sample-2.jpg",
+      imageUrl: "/sample02.jpg",
       projectUrl: "https://example.com",
       features: [
         "Real-time updates",
