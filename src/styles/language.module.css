@@ -1,0 +1,17 @@
+.language {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    background-color: var(--secondary);
+    border: 1px solid var(--secondary);
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1000;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.language:hover {
+    background-color: var(--primary);
+}

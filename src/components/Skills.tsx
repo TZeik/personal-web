@@ -67,6 +67,11 @@ const Skills: React.FC = () => {
           imageUrl:
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
         },
+        {
+          name: "Firebase",
+          imageUrl:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+        },
       ],
     },
     {
@@ -76,6 +81,11 @@ const Skills: React.FC = () => {
           name: "React Native",
           imageUrl:
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        },
+        {
+          name: "Expo",
+          imageUrl:
+            "/expo.svg",
         },
       ],
     },
@@ -96,6 +106,11 @@ const Skills: React.FC = () => {
           name: "MongoDB",
           imageUrl:
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+        },
+        {
+          name: "Firebase",
+          imageUrl:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
         },
       ],
     },
