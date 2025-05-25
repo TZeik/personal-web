@@ -23,7 +23,7 @@ const Home: React.FC = () => {
         </div>
         <Footer />
       </div>
-    </LanguageProvider>
+    </LanguageProvider> 
   );
 };
 
