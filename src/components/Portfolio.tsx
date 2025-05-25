@@ -81,23 +81,19 @@ const Portfolio: React.FC = () => {
       id: "3",
       title:
         language === "en"
-          ? "SecurePass | Access Control Application"
-          : "SecurePass | Aplicación de Control de Acceso",
+          ? "RD-PTMS | Public Transport System Prototype"
+          : "RD-PTMS | Prototipo de Sistema de Transporte Público",
       description:
         language === "en"
           ? "A full-featured system to manage visits in residences: connecting residents, guards, and administrators."
           : "Un sistema completo para gestionar visitas en residencias: conectando a residentes, guardias y administradores.",
       technologies: [
-        "React",
-        "Expo",
-        "MongoDB",
-        "Node.js",
-        "Express",
-        "Typescript",
-        "Cloudinary",
+        "Java",
+        "JavaFX",
+        "CSS",
       ],
       imageUrl: "/sample01.jpg",
-      codeUrl: "https://github.com/TZeik/secure-pass",
+      codeUrl: "https://github.com/TZeik/rd-ptms",
       features:
         language === "en"
           ? [
@@ -124,9 +120,10 @@ const Portfolio: React.FC = () => {
       technologies: [
         "Java",
         "WindowBuilder",
+        "Swing"
       ],
       imageUrl: "/sample02.jpg",
-      codeUrl: "https://github.com/TZeik/secure-pass",
+      codeUrl: "https://github.com/TZeik/speciality-center",
       features:
         language === "en"
           ? [
