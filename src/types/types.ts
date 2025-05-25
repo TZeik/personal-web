@@ -24,3 +24,9 @@ export interface Project {
   codeUrl: string;
   features: string[];
 }
+
+export interface Social {
+  name: string;
+  imageUrl: string;
+  linkTo: string;
+}

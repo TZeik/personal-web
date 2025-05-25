@@ -25,6 +25,11 @@ const WorkExperience: React.FC = () => {
     },
   ];
 
+  const handleFullView = () => {
+    // Implement your CV viewing logic here
+    console.log("View Full CV clicked");
+  };
+
   return (
     <section className={Styles.workExperience}>
       <h2 className={Styles.sectionTitle}>{t.title}</h2>
@@ -54,6 +59,12 @@ const WorkExperience: React.FC = () => {
             </ul>
           </div>
         ))}
+      </div>
+      <div className={Styles.viewFullCV}>
+        <button onClick={handleFullView} aria-label={t.viewFullCV}>
+          {t.viewFullCV}
+          <span className={Styles.buttonIcon}>→</span>
+        </button>
       </div>
     </section>
   );

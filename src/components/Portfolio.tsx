@@ -19,9 +19,13 @@ const Portfolio: React.FC = () => {
   const projects: Project[] = [
     {
       id: "1",
-      title: "E-commerce Platform",
-      description: "A full-featured online store with payment integration",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      title: language === "en"
+          ? "SecurePass | Access Control Application"
+          : "SecurePass | Aplicación de Control de Acceso",
+      description: language === "en"
+          ? "A full-featured system to manage visits in residences: connecting residents, guards, and administrators."
+          : "Un sistema completo para gestionar visitas en residencias: conectando a residentes, guardias y administradores.",
+      technologies: ["React", "Expo", "MongoDB", "Node.js", "Express", "Typescript", "Cloudinary"],
       imageUrl: "/sample01.jpg",
       codeUrl: "https://github.com/example",
       features: [
@@ -33,17 +37,26 @@ const Portfolio: React.FC = () => {
     },
     {
       id: "2",
-      title: "Task Management App",
-      description: "Collaborative tool for team task organization",
-      technologies: ["React", "Firebase", "Material UI"],
+      title:
+        language === "en"
+          ? "Dafu | Clinic Management System"
+          : "Dafu | Sistema de Administración de Consultorio",
+      description:
+        language === "en"
+          ? "A streamlined app to manage appointments, patient records, billing, and staff schedules—perfect for modern clinics."
+          : "Una aplicación simplificada para gestionar citas, registros de pacientes, facturación y horarios del personal, perfecta para clínicas modernas.",
+      technologies: ["React", "MongoDB", "Material UI", "Expo"],
       imageUrl: "/sample02.jpg",
       codeUrl: "https://github.com/example",
-      features: [
-        "Real-time updates",
-        "Drag-and-drop interface",
-        "Team collaboration",
-        "Progress tracking",
-      ],
+      features:
+        language === "en"
+          ? [
+              "Real-time updates",
+              "Drag-and-drop interface",
+              "Team collaboration",
+              "Progress tracking",
+            ]
+          : ["Na", "Na"],
     },
     {
       id: "3",

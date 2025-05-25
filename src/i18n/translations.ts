@@ -12,6 +12,7 @@ export type Translations = {
   workExperience: {
     title: string;
     present: string;
+    viewFullCV: string;
   };
   skills: {
     title: string;
@@ -23,7 +24,6 @@ export type Translations = {
     technologies: string;
   };
   footer: {
-    contactInfo: string;
     location: string;
     copyright: string;
   };
@@ -47,7 +47,8 @@ export const translations: Record<'en' | 'es', Translations> = {
     },
     workExperience: {
       title: "Work Experience",
-      present: "Present"
+      present: "Present",
+      viewFullCV: "View Full CV"
     },
     skills: {
       title: "Skills"
@@ -59,7 +60,6 @@ export const translations: Record<'en' | 'es', Translations> = {
       technologies: "Technologies"
     },
     footer: {
-      contactInfo: "Contact Info",
       location: "Dominican Republic, Santiago",
       copyright: "Randy Germosén. All Rights Reserved."
     }
@@ -81,7 +81,8 @@ export const translations: Record<'en' | 'es', Translations> = {
     },
     workExperience: {
       title: "Experiencia Laboral",
-      present: "Presente"
+      present: "Presente",
+      viewFullCV: "Ver CV Completo"
     },
     skills: {
       title: "Habilidades"
@@ -93,7 +94,6 @@ export const translations: Record<'en' | 'es', Translations> = {
       technologies: "Tecnologías"
     },
     footer: {
-      contactInfo: "Información de Contacto",
       location: "República Dominicana, Santiago",
       copyright: "Randy Germosén. Todos los derechos reservados."
     }

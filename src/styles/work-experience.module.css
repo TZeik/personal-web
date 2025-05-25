@@ -73,3 +73,44 @@
   margin-bottom: 0.5rem;
   line-height: 1.5;
 }
+
+.viewFullCV {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+}
+
+.viewFullCV button {
+  padding: 0.75rem 1.5rem;
+
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.viewFullCV button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.viewFullCV button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.buttonIcon {
+  transition: transform 0.3s ease;
+}
+
+.viewCV:hover .buttonIcon {
+  transform: translateX(4px);
+}
