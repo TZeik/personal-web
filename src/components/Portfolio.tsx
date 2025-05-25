@@ -19,21 +19,37 @@ const Portfolio: React.FC = () => {
   const projects: Project[] = [
     {
       id: "1",
-      title: language === "en"
+      title:
+        language === "en"
           ? "SecurePass | Access Control Application"
           : "SecurePass | Aplicación de Control de Acceso",
-      description: language === "en"
+      description:
+        language === "en"
           ? "A full-featured system to manage visits in residences: connecting residents, guards, and administrators."
           : "Un sistema completo para gestionar visitas en residencias: conectando a residentes, guardias y administradores.",
-      technologies: ["React", "Expo", "MongoDB", "Node.js", "Express", "Typescript", "Cloudinary"],
-      imageUrl: "/sample01.jpg",
-      codeUrl: "https://github.com/example",
-      features: [
-        "Product catalog with filters",
-        "User authentication",
-        "Shopping cart",
-        "Payment processing",
+      technologies: [
+        "React",
+        "Expo",
+        "MongoDB",
+        "Node.js",
+        "Express",
+        "Typescript",
+        "Cloudinary",
       ],
+      imageUrl: "/portfolio001.png",
+      codeUrl: "https://github.com/TZeik/secure-pass",
+      features:
+        language === "en"
+          ? [
+              "Full visit management",
+              "Roles & authentication",
+              "Report generation, easy to use, and more...",
+            ]
+          : [
+              "Gestión completa de visitas",
+              "Roles y autenticación",
+              "Generación de informes, fácil de usar, y más...",
+            ],
     },
     {
       id: "2",
@@ -47,44 +63,82 @@ const Portfolio: React.FC = () => {
           : "Una aplicación simplificada para gestionar citas, registros de pacientes, facturación y horarios del personal, perfecta para clínicas modernas.",
       technologies: ["React", "MongoDB", "Material UI", "Expo"],
       imageUrl: "/sample02.jpg",
-      codeUrl: "https://github.com/example",
+      codeUrl: "https://github.com/TZeik/dfu-clinic",
       features:
         language === "en"
           ? [
-              "Real-time updates",
-              "Drag-and-drop interface",
-              "Team collaboration",
-              "Progress tracking",
+              "Easy appointment management",
+              "Reports & statistics",
+              "Billing system and automatic notifications",
             ]
-          : ["Na", "Na"],
+          : [
+              "Gestión de citas fácil",
+              "Informes y estadísticas",
+              "Sistema de facturación y notificaciones automáticas",
+            ],
     },
     {
       id: "3",
-      title: "Secure Pass App",
-      description: "Password manager with end-to-end encryption",
-      technologies: ["React", "Node.js", "PostgreSQL", "CryptoJS"],
-      imageUrl: "/sample03.jpg",
-      codeUrl: "https://github.com/example",
-      features: [
-        "Secure password generation",
-        "Encrypted storage",
-        "Cross-device sync",
-        "Biometric authentication",
+      title:
+        language === "en"
+          ? "SecurePass | Access Control Application"
+          : "SecurePass | Aplicación de Control de Acceso",
+      description:
+        language === "en"
+          ? "A full-featured system to manage visits in residences: connecting residents, guards, and administrators."
+          : "Un sistema completo para gestionar visitas en residencias: conectando a residentes, guardias y administradores.",
+      technologies: [
+        "React",
+        "Expo",
+        "MongoDB",
+        "Node.js",
+        "Express",
+        "Typescript",
+        "Cloudinary",
       ],
+      imageUrl: "/sample01.jpg",
+      codeUrl: "https://github.com/TZeik/secure-pass",
+      features:
+        language === "en"
+          ? [
+              "Full visit management",
+              "Roles & Authentication",
+              "Report generation, easy to use, and more...",
+            ]
+          : [
+              "Gestión completa de visitas",
+              "Roles y autenticación",
+              "Generación de informes, fácil de usar, y más...",
+            ],
     },
     {
       id: "4",
-      title: "Weather Dashboard",
-      description: "Real-time weather information with forecasts",
-      technologies: ["React", "OpenWeather API", "Chart.js"],
-      imageUrl: "/sample04.jpg",
-      codeUrl: "https://github.com/example",
-      features: [
-        "Location-based weather",
-        "5-day forecast",
-        "Weather charts",
-        "Favorite locations",
+      title:
+        language === "en"
+          ? "SpecialityCenter | Speciality Center Manager"
+          : "SpecialityCenter | Administrador de Centro de Especialidades",
+      description:
+        language === "en"
+          ? "I worked on a desktop application that is used to manage a specialty center."
+          : "Trabajé en una aplicación de escritorio que sirve para administrar un centro de especialidades.",
+      technologies: [
+        "Java",
+        "WindowBuilder",
       ],
+      imageUrl: "/sample02.jpg",
+      codeUrl: "https://github.com/TZeik/secure-pass",
+      features:
+        language === "en"
+          ? [
+              "Full visit management",
+              "Roles & Authentication",
+              "Report generation, easy to use, and more...",
+            ]
+          : [
+              "Gestión completa de visitas",
+              "Roles y autenticación",
+              "Generación de informes, fácil de usar, y más...",
+            ],
     },
   ];
 

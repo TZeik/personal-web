@@ -26,8 +26,8 @@ body {
   --error: #f44336; /* Color para errores */
   --info: #2196f3; /* Color para información */
   --background-secondary: #f8f9fa;
-  --accent-color: #ffffff;
-  --card-background: #fff;
+  --accent-color: #c0c0c0;
+  --card-background: #000;
 
   /* Variables para transiciones */
   --transition-fast: 0.2s ease;

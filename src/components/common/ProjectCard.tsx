@@ -5,7 +5,7 @@ import Styles from "../../styles/portfolio.module.css";
 interface ProjectCardProps {
   project: Project;
   position: string;
-  direction: 'left' | 'right';
+  direction: "left" | "right";
   onClick: () => void;
   children?: React.ReactNode;
 }
@@ -13,24 +13,27 @@ interface ProjectCardProps {
 const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
   ({ project, position, direction, onClick, children }, ref) => {
     return (
-      <div 
+      <div
         ref={ref}
-        className={`${Styles.projectCard} ${Styles[`card${position.charAt(0).toUpperCase() + position.slice(1)}`]}`}
+        className={`${Styles.projectCard} ${
+          Styles[`card${position.charAt(0).toUpperCase() + position.slice(1)}`]
+        }`}
         onClick={onClick}
       >
-        <div
-          className={Styles.projectBackground}
-          style={{ backgroundImage: `url(${project.imageUrl})` }}
-        >
+        <div className={Styles.ProjectContentContainer}>
+          <div
+            className={Styles.projectBackgroundImage}
+            style={{
+              backgroundImage: `url(${project.imageUrl})`,
+            }}
+          />
           <div className={Styles.projectContent}>
             <div className={Styles.projectHeader}>
               <h3 className={Styles.projectTitle}>{project.title}</h3>
-              <p className={Styles.projectDescription}>
-                {project.description}
-              </p>
+              <p className={Styles.projectDescription}>{project.description}</p>
             </div>
 
-            {position === 'center' && (
+            {position === "center" && (
               <>
                 <div className={Styles.projectDetails}>
                   <div className={Styles.projectFeatures}>
@@ -64,9 +67,11 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                    alt="github icon"
-                    className={Styles.codeIcon} />
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                      alt="github icon"
+                      className={Styles.codeIcon}
+                    />
                     View Code
                   </a>
                 </div>
@@ -79,6 +84,6 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
   }
 );
 
-ProjectCard.displayName = 'ProjectCard';
+ProjectCard.displayName = "ProjectCard";
 
 export default ProjectCard;

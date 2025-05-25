@@ -114,3 +114,18 @@
 .viewCV:hover .buttonIcon {
   transform: translateX(4px);
 }
+
+@media (max-width: 1100px) {
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .workplace {
+  font-size: 1.3rem;
+  }
+
+  .workIcon {
+  width: 35px;
+  height: 35px;
+}
+}

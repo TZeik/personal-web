@@ -33,7 +33,7 @@ export const translations: Record<'en' | 'es', Translations> = {
   en: {
     header: {
       name: "Hi! I'm Randy Germosén",
-      title: "Full Stack and Software Engineer",
+      title: "Full Stack Developer and Software Engineer",
       descriptionTitle: "Business-Driven Web, Mobile & Software Developer",
       description: "Skilled in designing and implementing robust applications across multiple platforms. Combines problem-solving expertise with a deep understanding of both frontend and backend systems."
     },
@@ -67,7 +67,7 @@ export const translations: Record<'en' | 'es', Translations> = {
   es: {
     header: {
       name: "¡Hola! Soy Randy Germosén",
-      title: "Ingeniero de Software Full Stack",
+      title: "Ingeniero en Software y Desarrollador Full Stack",
       descriptionTitle: "Desarrollador Web, Móvil y de Software Orientado a Negocios",
       description: "Experto en diseñar e implementar aplicaciones robustas en múltiples plataformas. Combino habilidades para resolver problemas con un profundo conocimiento de sistemas frontend y backend."
     },

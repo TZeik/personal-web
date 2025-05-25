@@ -32,7 +32,6 @@ const Footer: React.FC = () => {
         <div className={Styles.contactInfo}>
           <p>{t.location}</p>
           <p>business@randygermosen.com</p>
-          <p>+1 809 742 0101</p>
         </div>
         <div className={Styles.socialMedia}>
           {socials.map((social, index) => (

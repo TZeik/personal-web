@@ -56,39 +56,54 @@
 .cardLeft {
   left: 0;
   transform: translateX(-30%) scale(0.85);
-  opacity: 0.7;
+  opacity: 1;
   z-index: 1;
   cursor: pointer;
-  filter: brightness(0.8);
+  filter: brightness(0.5);
 }
 
 .cardCenter {
   left: 50%;
   transform: translateX(-50%) scale(1);
-  opacity: 1;
   z-index: 2;
   filter: brightness(1);
+  background-color: black;
 }
 
 .cardRight {
   left: 100%;
   transform: translateX(-70%) scale(0.85);
-  opacity: 0.7;
+  opacity: 1;
   z-index: 1;
   cursor: pointer;
-  filter: brightness(0.8);
+  filter: brightness(0.5);
 }
 
-.projectBackground {
-  position: relative;
+/* Estilo para la imagen de fondo con blur */
+.projectBackgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  z-index: 1;
+  opacity: 0.5;
+  filter: blur(3px);
 }
 
-.projectBackground::before {
+/* Contenedor del contenido que va encima */
+.projectContentContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+/* Elimina el .projectBackground original y ajusta el gradiente */
+.projectContentContainer::before {
   content: "";
   position: absolute;
   top: 0;
@@ -100,40 +115,48 @@
     rgba(0, 0, 0, 0.1) 0%,
     rgba(0, 0, 0, 0.8) 100%
   );
+  z-index: 1;
 }
 
+/* Asegúrate que el contenido esté sobre todo */
 .projectContent {
   position: relative;
   height: 100%;
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  color: white;
   z-index: 2;
+  color: var(--white);
 }
-
 .projectHeader {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .projectTitle {
   font-size: 2rem;
+  text-shadow: 
+    -0.2px -0.2px 0 black,  
+     0.2px -0.2px 0 black,
+    -0.2px  0.2px 0 black,
+     0.2px  0.2px 0 black;
   margin-bottom: 0.5rem;
-  color: white;
 }
 
 .projectDescription {
   font-size: 1rem;
   opacity: 0.9;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  max-width: 450px;
+
 }
 
 /* Project Details (Center Card Only) */
 .projectDetails {
   display: flex;
   flex: 1;
-  gap: 2rem;
-  margin-top: 1rem;
+  gap: 0.1rem;
+  margin-bottom: 2rem;
+  flex-direction: column;
 }
 
 .projectFeatures {
@@ -141,14 +164,13 @@
 }
 
 .projectTechnologies {
-  margin-top: 7%;
   flex: 1;
 }
 
 .detailTitle {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: var(--accent-color);
+  color: var(--white);
 }
 
 .projectFeatures ul {
@@ -190,8 +212,10 @@
 }
 
 .codeButton {
-  padding: 0.8rem 1.5rem;
+  padding: 0.7rem 2.8rem;
   background: var(--primary);
+  position: fixed;
+  bottom: 60px;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -199,11 +223,11 @@
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
-  margin-bottom: 12.5%;
   display: flex;
   flex-direction: row;
   gap: 10px;
   vertical-align: middle;
+  margin-top: 10px;
 }
 
 .codeButton:hover {
@@ -215,7 +239,7 @@
   width: 20px;
   height: 20px;
   object-fit: contain;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
   filter: invert(1);
 }
 
@@ -284,7 +308,7 @@
 
 .slideRightEnterActive {
   transform: translateX(-70%) scale(0.85);
-  opacity: 0.7;
+  opacity: 0.5;
   transition: all 500ms ease;
 }
 
@@ -295,13 +319,13 @@
 
 .slideLeftEnterActive {
   transform: translateX(-30%) scale(0.85);
-  opacity: 0.7;
+  opacity: 0.5;
   transition: all 500ms ease;
 }
 
 .slideLeftExit {
   transform: translateX(-30%) scale(0.85);
-  opacity: 0.7;
+  opacity: 0.1;
 }
 
 .slideLeftExitActive {
@@ -312,7 +336,7 @@
 
 .slideRightExit {
   transform: translateX(-70%) scale(0.85);
-  opacity: 0.7;
+  opacity: 0.1;
 }
 
 .slideRightExitActive {
@@ -322,9 +346,54 @@
 }
 
 /* Responsive Design */
+
+@media (max-width: 1100px) {
+  .projectTitle {
+    font-size: 1.6rem;
+  }
+
+  .projectDescription {
+    font-size: 0.9rem;
+  }
+
+  .detailTitle {
+    font-size: 1rem;
+  }
+
+  .projectFeatures {
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 768px) {
   .portfolioSection {
     padding: 2rem 1rem;
+  }
+
+  .projectTitle {
+    font-size: 1.2rem;
+  }
+
+  .projectDescription {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+
+  .techBadge {
+    font-size: 0.7rem;
+      padding: 0.2rem 0.7rem;
+  }
+
+  .detailTitle {
+    font-size: 0.9rem;
+  }
+
+  .projectFeatures {
+    display: none;
+  }
+
+  .codeButton {
+    padding: 0.4rem 1.6rem;
   }
 
   .cardsWrapper {
@@ -343,19 +412,8 @@
     width: 40px;
     height: 40px;
   }
-}
-
-@media (max-width: 480px) {
-  .sectionTitle {
-    font-size: 2rem;
-  }
-
   .cardsWrapper {
     height: 450px;
-  }
-
-  .projectTitle {
-    font-size: 1.5rem;
   }
 
   .projectContent {
