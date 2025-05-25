@@ -1,5 +1,5 @@
 # Build
-FROM node:18-alpine
+FROM node:18-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
@@ -7,7 +7,8 @@ COPY . .
 RUN npm run build
 
 # Production
-FROM nginx:alpine
-COPY --from=builder /app/build /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 80
+FROM node:18-alpine
+WORKDIR /app
+COPY --from=builder /app/build ./build
+RUN npm install -g serve
+CMD ["serve", "-s", "build", "-l", "3000"]

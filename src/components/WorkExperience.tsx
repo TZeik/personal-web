@@ -1,14 +1,19 @@
 import React from "react";
 import Styles from "../styles/work-experience.module.css";
 import { Experience } from "../types/types";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../i18n/translations";
 
 const WorkExperience: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language].workExperience;
+
   const experiences: Experience[] = [
     {
       workplace: "Example Workplace #1",
       position: "Example Position",
-      startDate: "Enero",
-      endDate: "Present",
+      startDate: language === "es" ? "Enero" : "January",
+      endDate: t.present,
       information: ["Example Info 1", "Example Info 2", "Example Info 3"],
     },
     {
@@ -22,7 +27,7 @@ const WorkExperience: React.FC = () => {
 
   return (
     <section className={Styles.workExperience}>
-      <h2 className={Styles.sectionTitle}>Work Experience</h2>
+      <h2 className={Styles.sectionTitle}>{t.title}</h2>
       <div className={Styles.experienceList}>
         {experiences.map((exp, index) => (
           <div key={index} className={Styles.experienceItem}>

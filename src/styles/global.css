@@ -1,9 +1,37 @@
 body {
-    --primary: #123b63;
-    --secondary: #d5e6ff;
-    --tertiary: #2c3e50;
-    --white: #ffffff;
-    --black: #2b2b2b;
-    --dark-gray: #6b6b6b;
-    --light-gray: #a5aaac;
+  --primary: #123b63; /* Color tema primario*/
+  --secondary: #d5e6ff; /* Color tema secundario */
+  --tertiary: #2c3e50; /* Color tema terciario */
+  --white: #ffffff;
+  --black: #2b2b2b;
+  --dark-gray: #6b6b6b;
+  --light-gray: #a5aaac;
+  --primary-light: #3a6ea5; /* Versión más clara del color primario */
+  --primary-dark: #0a2a4a; /* Versión más oscura del color primario */
+  --secondary-light: #e8f1ff;
+  --text-primary: #333; /* Color de texto principal */
+  --text-secondary: var(--dark-gray); /* Color de texto secundario */
+  --text-light: var(--white); /* Texto claro para fondos oscuros */
+  --text-dark: var(--black); /* Texto oscuro para fondos claros */
+  --bg-primary: var(--white); /* Fondo principal */
+  --bg-secondary: #f5f9ff; /* Fondo secundario */
+  --bg-dark: var(--tertiary); /* Fondo oscuro */
+  --border-light: rgba(255, 255, 255, 0.2); /* Borde claro */
+  --border-dark: rgba(0, 0, 0, 0.1); /* Borde oscuro */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Color de sombra */
+  --overlay-dark: rgba(0, 0, 0, 0.7); /* Overlay oscuro */
+  --overlay-light: rgba(255, 255, 255, 0.7); /* Overlay claro */
+  --success: #4caf50; /* Color para indicar éxito */
+  --warning: #ff9800; /* Color para advertencias */
+  --error: #f44336; /* Color para errores */
+  --info: #2196f3; /* Color para información */
+  --background-secondary: #f8f9fa;
+  --accent-color: #ffffff;
+  --card-background: #fff;
+
+  /* Variables para transiciones */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }

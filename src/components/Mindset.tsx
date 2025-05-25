@@ -1,7 +1,12 @@
 import React from 'react';
 import Styles from "../styles/mindset.module.css";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../i18n/translations";
 
 const Mindset: React.FC = () => {
+    const { language } = useLanguage();
+    const t = translations[language].mindset;
+
     return (
         <div className={Styles.mindsetContainer}>
             <div className={Styles.contentWrapper}>
@@ -13,26 +18,11 @@ const Mindset: React.FC = () => {
                     />
                 </div>
                 <div className={Styles.textSection}>
-                    <h2 className={Styles.sectionTitle}>Mindset</h2>
+                    <h2 className={Styles.sectionTitle}>{t.title}</h2>
                     <div className={Styles.description}>
-                        <p>
-                            As a full-stack developer, I approach problems with a systematic 
-                            and analytical mindset. I break down complex challenges into 
-                            manageable components, applying both technical expertise and 
-                            creative thinking to develop efficient solutions.
-                        </p>
-                        <p>
-                            When leadership is required, I naturally step up to coordinate 
-                            efforts, facilitate communication between teams, and ensure 
-                            project alignment with business goals. I believe in leading 
-                            by example through clean code, thorough documentation, and 
-                            mentoring junior developers.
-                        </p>
-                        <p>
-                            My adaptability allows me to switch contexts between frontend 
-                            and backend seamlessly, while maintaining a user-centric focus 
-                            throughout the development process.
-                        </p>
+                        {t.paragraphs.map((paragraph, index) => (
+                            <p key={index}>{paragraph}</p>
+                        ))}
                     </div>
                 </div>
             </div>

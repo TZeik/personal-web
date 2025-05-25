@@ -1,8 +1,13 @@
 import React from "react";
 import Styles from "../styles/skills.module.css";
 import { SkillCategory } from "../types/types";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../i18n/translations";
 
 const Skills: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language].skills;
+
   const skillCategories: SkillCategory[] = [
     {
       name: "Frontend",
@@ -84,8 +89,7 @@ const Skills: React.FC = () => {
         },
         {
           name: "Expo",
-          imageUrl:
-            "/expo.svg",
+          imageUrl: "/expo.svg",
         },
       ],
     },
@@ -148,7 +152,7 @@ const Skills: React.FC = () => {
 
   return (
     <section className={Styles.skills} id="skills">
-      <h2 className={Styles.sectionTitle}>Skills</h2>
+      <h2 className={Styles.sectionTitle}>{t.title}</h2>
       <div className={Styles.skillsContainer}>
         {skillCategories.map((category) => (
           <div key={category.name} className={Styles.skillCategory}>

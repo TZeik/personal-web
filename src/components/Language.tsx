@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import Styles from '../styles/language.module.css';
-const Language: React.FC = () => {
-    const [currentLanguage, setCurrentLanguage] = useState<'en' | 'es'>('en');
+import { useLanguage } from '../contexts/LanguageContext';
 
-    const toggleLanguage = () => {
-        setCurrentLanguage(prev => prev === 'es' ? 'en' : 'es');
-        // Language change logic
-    };
+const Language: React.FC = () => {
+    const { language, toggleLanguage } = useLanguage();
 
     return (
         <button 
             className={Styles.language}
             onClick={toggleLanguage}
         >
-            {currentLanguage === 'en' ? 'EN' : 'ES'}
+            {language === 'es' ? 'EN' : 'ES'}
         </button>
     );
 };
