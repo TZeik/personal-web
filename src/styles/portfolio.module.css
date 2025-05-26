@@ -43,7 +43,7 @@
 /* Project Card Styles */
 .projectCard {
   position: absolute;
-  width: 80%;
+  width: 70%;
   height: 100%;
   transition: all 0.5s ease;
   transform-style: preserve-3d;
@@ -55,7 +55,7 @@
 
 .cardLeft {
   left: 0;
-  transform: translateX(-30%) scale(0.85);
+  transform: scale(0.85);
   opacity: 1;
   z-index: 1;
   cursor: pointer;
@@ -72,7 +72,7 @@
 
 .cardRight {
   left: 100%;
-  transform: translateX(-70%) scale(0.85);
+  transform: translateX(-100%) scale(0.85);
   opacity: 1;
   z-index: 1;
   cursor: pointer;
@@ -134,11 +134,8 @@
 
 .projectTitle {
   font-size: 2rem;
-  text-shadow: 
-    -0.2px -0.2px 0 black,  
-     0.2px -0.2px 0 black,
-    -0.2px  0.2px 0 black,
-     0.2px  0.2px 0 black;
+  text-shadow: -0.2px -0.2px 0 black, 0.2px -0.2px 0 black, -0.2px 0.2px 0 black,
+    0.2px 0.2px 0 black;
   margin-bottom: 0.5rem;
 }
 
@@ -147,7 +144,6 @@
   opacity: 0.9;
   margin-bottom: 0.5rem;
   max-width: 450px;
-
 }
 
 /* Project Details (Center Card Only) */
@@ -248,7 +244,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--border-dark);
   border: none;
   width: 60px;
   height: 60px;
@@ -267,11 +263,11 @@
 }
 
 .prevButton {
-  left: 25px;
+  right: 95%;
 }
 
 .nextButton {
-  right: 25px;
+  left: 95%;
 }
 
 .sliderDots {
@@ -371,7 +367,7 @@
   }
 
   .projectTitle {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 
   .projectDescription {
@@ -380,12 +376,12 @@
   }
 
   .techBadge {
-    font-size: 0.7rem;
-      padding: 0.2rem 0.7rem;
+    font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
   }
 
   .detailTitle {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .projectFeatures {
@@ -393,15 +389,17 @@
   }
 
   .codeButton {
-    padding: 0.4rem 1.6rem;
+    padding: 0.3rem 1.2rem;
+    font-size: 0.8rem;
+  }
+
+  .codeIcon {
+    width: 17px;
+    height: 17px;
   }
 
   .cardsWrapper {
     height: 500px;
-  }
-
-  .projectCard {
-    width: 90%;
   }
 
   .projectDetails {
@@ -412,11 +410,23 @@
     width: 40px;
     height: 40px;
   }
+  .prevButton {
+    right: 92%;
+  }
+
+  .nextButton {
+    left: 92%;
+  }
+
   .cardsWrapper {
     height: 450px;
   }
 
   .projectContent {
     padding: 1.5rem;
+  }
+  .dot {
+    width: 9px;
+    height: 9px;
   }
 }

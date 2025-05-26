@@ -16,7 +16,7 @@ const Home: React.FC = () => {
         <Header />
         <Language />
         <div className={Styles.main}>
-          <WorkExperience />
+          {/* <WorkExperience /> */}
           <Mindset />
           <Portfolio />
           <Skills />
