@@ -21,6 +21,7 @@ body {
   --shadow-color: rgba(0, 0, 0, 0.1); /* Color de sombra */
   --overlay-dark: rgba(0, 0, 0, 0.7); /* Overlay oscuro */
   --overlay-light: rgba(255, 255, 255, 0.7); /* Overlay claro */
+  --overlay-sepia: #e3bc22;
   --success: #4caf50; /* Color para indicar éxito */
   --warning: #ff9800; /* Color para advertencias */
   --error: #f44336; /* Color para errores */

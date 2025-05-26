@@ -15,6 +15,10 @@
   gap: 4rem;
 }
 
+.sectionTitle {
+  font-size: 2rem;
+}
+
 .profileSection {
   flex: 0 0 auto;
 }

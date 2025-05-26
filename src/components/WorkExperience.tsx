@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useRef } from "react";
 import Styles from "../styles/work-experience.module.css";
 import { Experience } from "../types/types";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../i18n/translations";
+import { motion, useInView } from "framer-motion";
 
 const WorkExperience: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language].workExperience;
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   const experiences: Experience[] = [
     {
@@ -29,13 +32,44 @@ const WorkExperience: React.FC = () => {
     // Implement your CV viewing logic here
     console.log("View Full CV clicked");
   };
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { x: -20, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { type: "spring", stiffness: 100 },
+    },
+  };
 
   return (
-    <section className={Styles.workExperience}>
-      <h2 className={Styles.sectionTitle}>{t.title}</h2>
+    <motion.section
+      className={Styles.workExperience}
+      initial="hidden"
+      ref={ref}
+      animate={isInView ? "visible" : "hidden"}
+      variants={container}
+    >
+      <motion.h2 className={Styles.sectionTitle} variants={item}>
+        {t.title}
+      </motion.h2>
       <div className={Styles.experienceList}>
         {experiences.map((exp, index) => (
-          <div key={index} className={Styles.experienceItem}>
+          <motion.div
+            key={index}
+            className={Styles.experienceItem}
+            variants={item}
+          >
             <div className={Styles.experienceHeader}>
               <div className={Styles.workplaceContainer}>
                 <img
@@ -52,21 +86,29 @@ const WorkExperience: React.FC = () => {
             </div>
             <ul className={Styles.informationList}>
               {exp.information.map((info, i) => (
-                <li key={i} className={Styles.informationItem}>
+                <motion.li
+                  key={i}
+                  className={Styles.informationItem}
+                  variants={item}
+                >
                   {info}
-                </li>
+                </motion.li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         ))}
       </div>
-      <div className={Styles.viewFullCV}>
+      <motion.div
+        className={Styles.viewFullCV}
+        whileHover={{ scale: 1.05 }}
+        variants={item}
+      >
         <button onClick={handleFullView} aria-label={t.viewFullCV}>
           {t.viewFullCV}
           <span className={Styles.buttonIcon}>→</span>
         </button>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

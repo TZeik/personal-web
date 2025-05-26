@@ -1,6 +1,8 @@
 import React from "react";
 import { Project } from "../../types/types";
 import Styles from "../../styles/portfolio.module.css";
+import { useLanguage } from "../../contexts/LanguageContext";
+import { translations } from "../../i18n/translations";
 
 interface ProjectCardProps {
   project: Project;
@@ -12,6 +14,9 @@ interface ProjectCardProps {
 
 const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
   ({ project, position, direction, onClick, children }, ref) => {
+    const { language } = useLanguage();
+    const t = translations[language].portfolio;
+
     return (
       <div
         ref={ref}
@@ -37,7 +42,7 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
               <>
                 <div className={Styles.projectDetails}>
                   <div className={Styles.projectFeatures}>
-                    <h4 className={Styles.detailTitle}>Features</h4>
+                    <h4 className={Styles.detailTitle}>{t.features}</h4>
                     <ul>
                       {project.features.map((feature, i) => (
                         <li key={i}>
@@ -49,7 +54,7 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
                   </div>
 
                   <div className={Styles.projectTechnologies}>
-                    <h4 className={Styles.detailTitle}>Technologies</h4>
+                    <h4 className={Styles.detailTitle}>{t.technologies}</h4>
                     <div className={Styles.techBadges}>
                       {project.technologies.map((tech, i) => (
                         <span key={i} className={Styles.techBadge}>
@@ -72,7 +77,7 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
                       alt="github icon"
                       className={Styles.codeIcon}
                     />
-                    View Code
+                    {t.viewCode}
                   </a>
                 </div>
               </>

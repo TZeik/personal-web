@@ -1,9 +1,10 @@
 .language {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 8px 16px;
-    background-color: var(--tertiary);
+    bottom: 25px;
+    left: 25px;
+    width: 35px;
+    height: 35px;
+    background-color: var(--primary);
     border: 0.5px solid var(--white);
     color: var(--white);
     border-radius: 4px;
@@ -14,6 +15,20 @@
     opacity: 0.8;
 }
 
-.language:hover {
-    background-color: var(--primary);
+.languageText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+.language:hover{
+    background-color: var(--primary-light);
+    transform: scale(1.1) rotate(45deg);
+}
+
+.language:hover div{
+    transform: rotate(-45deg);
 }

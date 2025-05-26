@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useRef } from "react";
 import Styles from "../styles/skills.module.css";
 import { SkillCategory } from "../types/types";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../i18n/translations";
+import { motion, useInView } from "framer-motion";
 
 const Skills: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language].skills;
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   const skillCategories: SkillCategory[] = [
     {
@@ -150,16 +153,54 @@ const Skills: React.FC = () => {
     },
   ];
 
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 1.0 },
+    },
+  };
+
   return (
-    <section className={Styles.skills} id="skills">
-      <h2 className={Styles.sectionTitle}>{t.title}</h2>
+    <motion.section
+      className={Styles.skills}
+      id="skills"
+      initial="hidden"
+      ref={ref}
+      animate={isInView ? "visible" : "hidden"}
+      variants={container}
+    >
+      <motion.h2 className={Styles.sectionTitle} variants={item}>
+        {t.title}
+      </motion.h2>
       <div className={Styles.skillsContainer}>
         {skillCategories.map((category) => (
-          <div key={category.name} className={Styles.skillCategory}>
+          <motion.div
+            key={category.name}
+            className={Styles.skillCategory}
+            variants={item}
+          >
             <h3 className={Styles.categoryTitle}>{category.name}</h3>
-            <div className={Styles.skillsGrid}>
+            <motion.div className={Styles.skillsGrid}>
               {category.skills.map((skill) => (
-                <div key={skill.name} className={Styles.skillItem}>
+                <motion.div
+                  key={skill.name}
+                  className={Styles.skillItem}
+                  whileHover={{ scale: 1.05 }}
+                  variants={item}
+                >
                   <img
                     src={skill.imageUrl}
                     alt={skill.name}
@@ -170,13 +211,13 @@ const Skills: React.FC = () => {
                     }}
                   />
                   <span className={Styles.skillName}>{skill.name}</span>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 
