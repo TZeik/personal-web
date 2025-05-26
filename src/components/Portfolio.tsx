@@ -61,8 +61,8 @@ const Portfolio: React.FC = () => {
         language === "en"
           ? "A streamlined app to manage appointments, patient records, billing, and staff schedules—perfect for modern clinics."
           : "Una aplicación simplificada para gestionar citas, registros de pacientes, facturación y horarios del personal, perfecta para clínicas modernas.",
-      technologies: ["React", "MongoDB", "Material UI", "Expo"],
-      imageUrl: "/sample02.jpg",
+      technologies: ["React", "MongoDB", "Material UI", "Expo", "Next.js"],
+      imageUrl: "/portfolio002.png",
       codeUrl: "https://github.com/TZeik/dfu-clinic",
       features:
         language === "en"
@@ -85,26 +85,22 @@ const Portfolio: React.FC = () => {
           : "RD-PTMS | Prototipo de Sistema de Transporte Público",
       description:
         language === "en"
-          ? "A full-featured system to manage visits in residences: connecting residents, guards, and administrators."
-          : "Un sistema completo para gestionar visitas en residencias: conectando a residentes, guardias y administradores.",
-      technologies: [
-        "Java",
-        "JavaFX",
-        "CSS",
-      ],
-      imageUrl: "/sample01.jpg",
+          ? "I worked on a prototype of a public transportation system that is capable of calculating the shortest routes, placing markers, and comparing distances."
+          : "Trabajé en un prototipo de sistema de transporte público que es capaz de calcular las rutas más cortas, colocar marcadores y comparar distancias.",
+      technologies: ["Java", "JavaFX", "CSS"],
+      imageUrl: "/portfolio003.png",
       codeUrl: "https://github.com/TZeik/rd-ptms",
       features:
         language === "en"
           ? [
-              "Full visit management",
-              "Roles & Authentication",
-              "Report generation, easy to use, and more...",
+              "Create map templates",
+              "Generate the shortest route between two markers",
+              "Customize the template, and save it locally.",
             ]
           : [
-              "Gestión completa de visitas",
-              "Roles y autenticación",
-              "Generación de informes, fácil de usar, y más...",
+              "Crea plantillas de mapas",
+              "Genera la ruta más corta entre dos marcadores",
+              "Personaliza la platilla, y guardarla localmente",
             ],
     },
     {
@@ -117,24 +113,20 @@ const Portfolio: React.FC = () => {
         language === "en"
           ? "I worked on a desktop application that is used to manage a specialty center."
           : "Trabajé en una aplicación de escritorio que sirve para administrar un centro de especialidades.",
-      technologies: [
-        "Java",
-        "WindowBuilder",
-        "Swing"
-      ],
-      imageUrl: "/sample02.jpg",
+      technologies: ["Java", "WindowBuilder", "Swing"],
+      imageUrl: "/portfolio004.png",
       codeUrl: "https://github.com/TZeik/speciality-center",
       features:
         language === "en"
           ? [
-              "Full visit management",
-              "Roles & Authentication",
-              "Report generation, easy to use, and more...",
+              "Session and role management",
+              "Client and server using web sockets",
+              "Disease management and patient local database",
             ]
           : [
-              "Gestión completa de visitas",
-              "Roles y autenticación",
-              "Generación de informes, fácil de usar, y más...",
+              "Manejo de sesiones y roles",
+              "Cliente y servidor usando web sockets",
+              "Gestión de enfermedades y pacientes en base de datos local",
             ],
     },
   ];
