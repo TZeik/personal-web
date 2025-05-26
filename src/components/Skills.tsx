@@ -13,7 +13,7 @@ const Skills: React.FC = () => {
 
   const skillCategories: SkillCategory[] = [
     {
-      name: "Frontend",
+      name: language === "en"? "Front-end" : "Frontend",
       skills: [
         {
           name: "HTML5",
@@ -43,7 +43,7 @@ const Skills: React.FC = () => {
       ],
     },
     {
-      name: "Backend",
+      name: language === "en"? "Back-end" : "Backend",
       skills: [
         {
           name: "Node.js",
@@ -83,7 +83,7 @@ const Skills: React.FC = () => {
       ],
     },
     {
-      name: "Mobile",
+      name: language === "en"? "Mobile" : "Móvil",
       skills: [
         {
           name: "React Native",
@@ -97,7 +97,7 @@ const Skills: React.FC = () => {
       ],
     },
     {
-      name: "Databases",
+      name: language === "en" ? "Databases" : "Bases de Datos",
       skills: [
         {
           name: "SQL Server",
@@ -122,7 +122,7 @@ const Skills: React.FC = () => {
       ],
     },
     {
-      name: "DevOps & Tools",
+      name: language === "en" ? "DevOps & Tools" : "Herramientas",
       skills: [
         {
           name: "Git",

@@ -13,7 +13,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
-  ({ project, position, direction, onClick, children }, ref) => {
+  ({ project, position, onClick }, ref) => {
     const { language } = useLanguage();
     const t = translations[language].portfolio;
 

@@ -1,19 +1,22 @@
 /* Portfolio Section */
 .portfolioSection {
-  padding: 2rem;
+  padding: 3rem 1.5rem;
   background-color: var(--white);
   color: var(--primary);
-  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 139, 0.1);
   margin: 2rem 0;
+  position: relative;
+  display: block;
+  overflow: hidden;
 }
 
 .sectionTitle {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 3rem;
   position: relative;
   color: var(--primary);
+  font-weight: 700;
 }
 
 .sectionTitle::after {
@@ -23,64 +26,70 @@
   height: 4px;
   background: var(--primary);
   margin: 0.5rem auto 0;
+  border-radius: 2px;
 }
 
 /* Card Container */
 .cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 20px 100px;
+  height: 500px;
 }
 
 .cardsWrapper {
   position: relative;
-  height: 550px;
+  height: 100%;
+  width: 100%;
+  min-width: 350px;
   perspective: 2000px;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Project Card Styles */
 .projectCard {
   position: absolute;
-  width: 70%;
-  min-width: 250px;
+  width: 80%;
   height: 100%;
-  transition: all 0.5s ease;
-  transform-style: preserve-3d;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
   overflow: hidden;
   background: var(--card-background);
+  will-change: transform;
+  cursor: grab;
+  user-select: none;
 }
 
-.cardLeft {
-  left: 0;
-  transform: scale(0.85);
-  opacity: 1;
-  z-index: 1;
-  cursor: pointer;
-  filter: brightness(0.5);
+.projectCard:active {
+  cursor: grabbing;
 }
 
+/* Card positions - now handled by Framer Motion */
 .cardCenter {
-  left: 50%;
-  transform: translateX(-50%) scale(1);
-  z-index: 2;
-  filter: brightness(1);
-  background-color: black;
+  z-index: 10;
 }
 
+.cardLeft,
 .cardRight {
-  left: 100%;
-  transform: translateX(-100%) scale(0.85);
-  opacity: 1;
-  z-index: 1;
-  cursor: pointer;
-  filter: brightness(0.5);
+  z-index: 5;
+  pointer-events: none;
 }
 
-/* Estilo para la imagen de fondo con blur */
+/* Project content styles */
+.ProjectContentContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .projectBackgroundImage {
   position: absolute;
   top: 0;
@@ -91,73 +100,57 @@
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1;
-  opacity: 0.55;
-  filter: blur(3px);
+  opacity: 0.8;
+  filter: blur(1.5px);
 }
 
-/* Contenedor del contenido que va encima */
-.projectContentContainer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
-
-/* Elimina el .projectBackground original y ajusta el gradiente */
-.projectContentContainer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
-  z-index: 1;
-}
-
-/* Asegúrate que el contenido esté sobre todo */
 .projectContent {
   position: relative;
   height: 100%;
-  padding: 2rem;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
   z-index: 2;
   color: var(--white);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
 }
+
 .projectHeader {
   margin-bottom: 0.5rem;
 }
 
 .projectTitle {
-  font-size: 1.6rem;
-  text-shadow: -0.2px -0.2px 0 black, 0.2px -0.2px 0 black, -0.2px 0.2px 0 black,
-    0.2px 0.2px 0 black;
-  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .projectDescription {
-  font-size: 0.9rem;
+  font-size: 1rem;
   opacity: 0.9;
-  margin-bottom: 0.1rem;
-  max-width: 450px;
+  margin-bottom: 0.5rem;
+  max-width: 600px;
+  line-height: 1.5;
 }
 
 /* Project Details (Center Card Only) */
 .projectDetails {
   display: flex;
   flex: 1;
-  gap: 0.1rem;
-  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0;
 }
 
 .projectFeatures {
+  margin: 0;
   flex: 1;
-  font-size: 0.9rem
+  font-size: 0.9rem;
 }
 
 .projectTechnologies {
@@ -165,9 +158,10 @@
 }
 
 .detailTitle {
-  font-size: 1rem;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
   color: var(--white);
+  font-weight: 600;
 }
 
 .projectFeatures ul {
@@ -177,29 +171,33 @@
 }
 
 .projectFeatures li {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.8rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.7rem;
+  line-height: 1.4;
+  max-width: 320px;
 }
 
 .featureIcon {
   color: var(--accent-color);
   font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .techBadges {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.8rem;
 }
 
 .techBadge {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.2rem 0.6rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.3rem 0.6rem;
   border-radius: 20px;
   font-size: 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
 }
 
 /* Buttons */
@@ -210,34 +208,32 @@
 }
 
 .codeButton {
-  padding: 0.5rem 2rem;
+  padding: 0.7rem 2.1rem;
   background: var(--primary);
-  position: fixed;
-  bottom: 50px;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
+  border-radius: 50px;
+  font-weight: 600;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
   display: flex;
-  flex-direction: row;
+  align-items: center;
   gap: 10px;
-  vertical-align: middle;
-  margin-top: 10px;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .codeButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: var(--accent-color);
 }
 
 .codeIcon {
   width: 20px;
   height: 20px;
   object-fit: contain;
-  margin-bottom: 0.2rem;
   filter: invert(1);
 }
 
@@ -246,7 +242,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--border-dark);
+  background: rgba(255, 255, 255, 0.2);
   border: none;
   width: 60px;
   height: 60px;
@@ -255,117 +251,136 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 3;
+  z-index: 20;
   transition: all 0.3s ease;
   color: white;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .sliderButton:hover {
   background: var(--accent-color);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.sliderButton svg {
+  width: 24px;
+  height: 24px;
 }
 
 .prevButton {
-  right: 95%;
+  left: 20px;
 }
 
 .nextButton {
-  left: 95%;
+  right: 20px;
 }
 
 .sliderDots {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
-  gap: 10px;
-  z-index: 3;
+  margin-left: 64%;
+  margin-top: 0;
+  transform: translateX(-50%);
+  gap: 12px;
+  z-index: 15;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(80, 123, 158, 0.4);
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 0;
+  backdrop-filter: blur(1px);
 }
 
 .activeDot {
-  background: var(--accent-color);
-  transform: scale(1.2);
-}
-
-/* Animation Classes */
-.slideRightEnter {
-  transform: translateX(100%) scale(0.85);
-  opacity: 0;
-}
-
-.slideRightEnterActive {
-  transform: translateX(-70%) scale(0.85);
-  opacity: 0.5;
-  transition: all 500ms ease;
-}
-
-.slideLeftEnter {
-  transform: translateX(-100%) scale(0.85);
-  opacity: 0;
-}
-
-.slideLeftEnterActive {
-  transform: translateX(-30%) scale(0.85);
-  opacity: 0.5;
-  transition: all 500ms ease;
-}
-
-.slideLeftExit {
-  transform: translateX(-30%) scale(0.85);
-  opacity: 0.1;
-}
-
-.slideLeftExitActive {
-  transform: translateX(-100%) scale(0.85);
-  opacity: 0;
-  transition: all 500ms ease;
-}
-
-.slideRightExit {
-  transform: translateX(-70%) scale(0.85);
-  opacity: 0.1;
-}
-
-.slideRightExitActive {
-  transform: translateX(100%) scale(0.85);
-  opacity: 0;
-  transition: all 500ms ease;
+  background: rgba(0, 94, 255, 0.4);
+  transform: scale(1.3);
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .portfolioSection {
+    padding: 3rem 1.5rem;
+  }
 
-@media (max-width: 968px) {
+  .projectDescription {
+    font-size: 0.9rem;
+  }
+
+  .projectCard {
+    width: 85%;
+  }
+
+  .codeButton {
+    padding: 0.5rem 2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .projectCard {
+    width: 80%;
+  }
+
+  .projectContent {
+    padding: 1.8rem;
+  }
+
+  .projectTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .projectDetails {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .projectTechnologies {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
   .portfolioSection {
     padding: 2rem 1rem;
   }
 
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .cardContainer {
+    height: 400px;
+  }
+
+  .projectCard {
+    width: 80%;
+  }
+
+  .projectContent {
+    padding: 1.5rem;
+  }
+
   .projectTitle {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
   }
 
   .projectDescription {
-    font-size: 0.8rem;
-    margin-bottom: 0;
-  }
-
-  .techBadge {
-    font-size: 0.6rem;
-    padding: 0.2rem 0.5rem;
+    font-size: 0.9rem;
   }
 
   .detailTitle {
-    font-size: 0.8rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
   }
 
   .projectFeatures {
@@ -373,40 +388,22 @@
   }
 
   .codeButton {
-    padding: 0.3rem 1.2rem;
-    font-size: 0.8rem;
-  }
-
-  .codeIcon {
-    width: 17px;
-    height: 17px;
-  }
-
-  .projectDetails {
-    flex-direction: column;
+    padding: 0.6rem 1.8rem;
+    font-size: 0.9rem;
   }
 
   .sliderButton {
     width: 40px;
     height: 40px;
   }
-  .prevButton {
-    right: 92%;
+
+  .sliderButton svg {
+    width: 20px;
+    height: 20px;
   }
 
-  .nextButton {
-    left: 92%;
-  }
-
-  .projectContent {
-    padding: 1.5rem;
-  }
   .dot {
-    width: 9px;
-    height: 9px;
-  }
-
-  .cardsWrapper {
-    height: 400px;
+    width: 10px;
+    height: 10px;
   }
 }
