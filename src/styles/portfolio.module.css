@@ -100,7 +100,7 @@
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1;
-  opacity: 0.8;
+  opacity: 0.5;
   filter: blur(1.5px);
 }
 
@@ -111,11 +111,11 @@
   display: flex;
   flex-direction: column;
   z-index: 2;
-  color: var(--white);
+  color: var(--black);
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.8) 100%
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.8) 100%
   );
 }
 
@@ -126,6 +126,7 @@
 .projectTitle {
   font-size: 1.4rem;
   font-weight: 700;
+  color: var(--white);
   margin-bottom: 1rem;
   line-height: 1.2;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -160,7 +161,6 @@
 .detailTitle {
   font-size: 1.1rem;
   margin-bottom: 1.2rem;
-  color: var(--white);
   font-weight: 600;
 }
 
@@ -180,7 +180,7 @@
 }
 
 .featureIcon {
-  color: var(--accent-color);
+  color: var(--black);
   font-weight: bold;
   font-size: 1.2rem;
 }

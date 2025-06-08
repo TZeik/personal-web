@@ -233,7 +233,7 @@ const Portfolio: React.FC = () => {
                   drag="x"
                   dragConstraints={constraintsRef}
                   onDragEnd={handleDragEnd}
-                  className={Styles.projectCard}
+                  className={Styles.projectCardContainer}
                   style={{
                     position: "absolute",
                     left: "40%",
